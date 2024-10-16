@@ -1,0 +1,443 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "API Title",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:8000/"
+    }
+  ],
+  "paths": {
+    "/api/v1/product": {
+      "get": {
+        "description": "get  product",
+        "parameters": [
+          {
+            "name": "name[eq]",
+            "description": "get specific product detail by string",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "price[eq,lt,gt]",
+            "description": "get specific product detail by price equal,greaterthan,lessthan",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer",
+                        "description": "Unique identifier for the product"
+                      },
+                      "name": {
+                        "type": "string",
+                        "description": "Product name"
+                      },
+                      "description": {
+                        "type": "string",
+                        "description": "Product description (may be null)"
+                      },
+                      "price": {
+                        "type": "integer",
+                        "description": "Product price"
+                      },
+                      "imageId": {
+                        "type": "integer",
+                        "description": "Foreign key referencing the image"
+                      },
+                      "stockId": {
+                        "type": "integer",
+                        "description": "Foreign key referencing the stock"
+                      },
+                      "categoryId": {
+                        "type": "integer",
+                        "description": "Foreign key referencing the category"
+                      },
+                      "createdAt": {
+                        "type": "string",
+                        "description": "Product creation timestamp (may be null)"
+                      },
+                      "updatedAt": {
+                        "type": "string",
+                        "description": "Product update timestamp (may be null)"
+                      },
+                      "category": {
+                        "type": "object",
+                        "description": "Category data (included if loaded)",
+                        "properties": {}
+                      },
+                      "images": {
+                        "type": "array",
+                        "description": "Array of image data (included if loaded)",
+                        "items": {
+                          "type": "object",
+                          "description": "A single image object",
+                          "properties": {}
+                        }
+                      },
+                      "stock": {
+                        "type": "object",
+                        "description": "Stock data (included if loaded)",
+                        "properties": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "create product",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "name",
+                  "price"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Product name"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Product description (may be null)"
+                  },
+                  "price": {
+                    "type": "integer",
+                    "description": "Product price"
+                  },
+                  "category": {
+                    "type": "string",
+                    "description": "category name"
+                  },
+                  "img1": {
+                    "type": "string",
+                    "description": "Product price",
+                    "format": "binary"
+                  },
+                  "img2": {
+                    "type": "string",
+                    "description": "Product image",
+                    "format": "binary"
+                  },
+                  "img3": {
+                    "type": "string",
+                    "description": "Product image",
+                    "format": "binary"
+                  },
+                  "img4": {
+                    "type": "string",
+                    "description": "Product image",
+                    "format": "binary"
+                  },
+                  "img5": {
+                    "type": "string",
+                    "description": "Product image",
+                    "format": "binary"
+                  },
+                  "m": {
+                    "type": "integer",
+                    "description": "Product size stock"
+                  },
+                  "s": {
+                    "type": "integer",
+                    "description": "Product size stock"
+                  },
+                  "l": {
+                    "type": "integer",
+                    "description": "Product size stock"
+                  },
+                  "xl": {
+                    "type": "integer",
+                    "description": "Product size stock"
+                  },
+                  "xxl": {
+                    "type": "integer",
+                    "description": "Product size stock"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/product/{id_product}": {
+      "get": {
+        "description": "get  product",
+        "parameters": [
+          {
+            "name": "id_product",
+            "description": "get specific product detail by id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer",
+                        "description": "Unique identifier for the product"
+                      },
+                      "name": {
+                        "type": "string",
+                        "description": "Product name"
+                      },
+                      "description": {
+                        "type": "string",
+                        "description": "Product description (may be null)"
+                      },
+                      "price": {
+                        "type": "integer",
+                        "description": "Product price"
+                      },
+                      "imageId": {
+                        "type": "integer",
+                        "description": "Foreign key referencing the image"
+                      },
+                      "stockId": {
+                        "type": "integer",
+                        "description": "Foreign key referencing the stock"
+                      },
+                      "categoryId": {
+                        "type": "integer",
+                        "description": "Foreign key referencing the category"
+                      },
+                      "createdAt": {
+                        "type": "string",
+                        "description": "Product creation timestamp (may be null)"
+                      },
+                      "updatedAt": {
+                        "type": "string",
+                        "description": "Product update timestamp (may be null)"
+                      },
+                      "category": {
+                        "type": "object",
+                        "description": "Category data (included if loaded)",
+                        "properties": {}
+                      },
+                      "images": {
+                        "type": "array",
+                        "description": "Array of image data (included if loaded)",
+                        "items": {
+                          "type": "object",
+                          "description": "A single image object",
+                          "properties": {}
+                        }
+                      },
+                      "stock": {
+                        "type": "object",
+                        "description": "Stock data (included if loaded)",
+                        "properties": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "description": "delete product",
+        "parameters": [
+          {
+            "name": "id_product",
+            "description": "get specific product detail by id",
+            "in": "path",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "patch": {
+        "description": "edit product",
+        "parameters": [
+          {
+            "name": "id_product",
+            "description": "get specific product detail by id",
+            "in": "path",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Product name"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Product description (may be null)"
+                  },
+                  "price": {
+                    "type": "integer",
+                    "description": "Product price"
+                  },
+                  "img1": {
+                    "type": "string",
+                    "description": "Product price",
+                    "format": "binary"
+                  },
+                  "img2": {
+                    "type": "string",
+                    "description": "Product image",
+                    "format": "binary"
+                  },
+                  "img3": {
+                    "type": "string",
+                    "description": "Product image",
+                    "format": "binary"
+                  },
+                  "img4": {
+                    "type": "string",
+                    "description": "Product image",
+                    "format": "binary"
+                  },
+                  "img5": {
+                    "type": "string",
+                    "description": "Product image",
+                    "format": "binary"
+                  },
+                  "m": {
+                    "type": "integer",
+                    "description": "Product size stock"
+                  },
+                  "s": {
+                    "type": "integer",
+                    "description": "Product size stock"
+                  },
+                  "l": {
+                    "type": "integer",
+                    "description": "Product size stock"
+                  },
+                  "xl": {
+                    "type": "integer",
+                    "description": "Product size stock"
+                  },
+                  "xxl": {
+                    "type": "integer",
+                    "description": "Product size stock"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/login": {
+      "post": {
+        "description": "login",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "description": "user email"
+                  },
+                  "password": {
+                    "type": "string",
+                    "description": "password"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "message": {
+                        "type": "string",
+                        "description": "login successfull"
+                      },
+                      "user": {
+                        "type": "object",
+                        "description": "user's atribute"
+                      },
+                      "token": {
+                        "type": "string",
+                        "description": "Product price"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
