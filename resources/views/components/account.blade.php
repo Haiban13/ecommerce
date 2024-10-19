@@ -1,10 +1,11 @@
 <div class="h-2/6 w-screen md:h-2/5 flex flex-row bg-black items-center  ">
         <ion-icon name="person-circle-outline" class="w-2/5 h-80 text-white"></ion-icon>
-        <ul class="flex flex-col h-2/5 items-center justify-evenly">
-            <li><input type="text" class="rounded-sm" placeholder="name" value="{{$data->name}}"></li>
-            <li><input type="text" class="rounded-sm" placeholder="email" value="{{$data->email}}"></li>
-            <li><input type="text" class="rounded-sm" placeholder="phone" value="{{$data->phone}}"></li>
-        </ul>
+        <form class="flex flex-col h-5/6 md:h-5/6  w-1/2 items-start justify-around md:justify-evenly">
+            <input type="text" class="rounded-sm w-full md:w-3/4" placeholder="name" value="{{$data->name}}">
+            <input type="text" class="rounded-sm w-full md:w-3/4" placeholder="email" value="{{$data->email}}">
+            <input type="text"  class="rounded-sm w-full md:w-3/4" placeholder="phone" value="{{$data->phone}}">
+            <button class="text-white border-4 border-white py-1 px-3"> done</button>
+</form>
         </div>
         <div class="w-screen h-4/6 flex flex-col">
             <ul class="flex flex-row w-full h-1/5    items-center justify-center ">
@@ -47,18 +48,8 @@
 
             </div> -->
         </div>
-       @include('components.address.address')
-       @include('components.vouchers')
+       
+       
     </div>
 
 
-    <script>
-    function setpopup(x){
-        
-        var element=document.getElementsByClassName(x)
-        element[0].classList.contains('hidden') === true ?( element[0].classList.add('flex'),element[0].classList.remove('hidden')):(element[0].classList.remove('flex'),element[0].classList.add('hidden'))
-    }
-
-
-     
-</script>

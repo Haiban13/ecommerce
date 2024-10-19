@@ -3,22 +3,17 @@
 namespace App\Http\Controllers\api\v1;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class userController extends Controller
+class addressController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $data=Auth::user();
-        
-        return $data;
+        //
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -26,7 +21,6 @@ class userController extends Controller
     public function create()
     {
         //
-
     }
 
     /**
@@ -50,8 +44,7 @@ class userController extends Controller
      */
     public function edit(string $id)
     {
-        $user=User::where('id',$id)->get();
-        
+        //
     }
 
     /**
@@ -69,6 +62,4 @@ class userController extends Controller
     {
         //
     }
-
-    
 }

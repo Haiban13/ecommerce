@@ -1,6 +1,6 @@
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-<div class="flex-row   w-screen   h-auto     [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:rounded-full">
+<div class="flex-row   w-screen   h-auto      ">
   @isset($category)
     <div class="flex flex-row w-screen justify-between bg-black h-14  ">
       <ion-icon name="chevron-back-outline" class="text-white h-full w-8" onclick="history.back()"></ion-icon>
@@ -10,10 +10,24 @@
         
       </div>
     </div>
-    <div class="w-full h-14 bg-zinc-900 mt-4 flex flex-row items-center justify-evenly text-white overflow-x-auto ">
-       <div class="w-4/5 h-full bg-zinc-900  flex flex-row items-center justify-evenly text-white overflow-x-auto ">
+    <div class="w-full h-14 bg-zinc-900 mt-4 flex flex-row items-center justify-evenly text-white overflow-x-auto  ">
+       <div class="w-4/5 h-full bg-zinc-900  flex flex-row items-center justify-evenly text-white overflow-x-auto  scroll">
          <h1 class="rounded-full border w-fit min-w-28 flex items-center justify-center ml-3 px-2 text-nowrap">most-popular</h1>
          <h1 class="rounded-full border w-fit min-w-28 flex items-center justify-center ml-3 px-2 text-nowrap">cheapest</h1>
+         <h1 class="rounded-full border w-fit min-w-29 flex items-center justify-center ml-3 px-3 text-nowrap">most expensive</h1>         
+         <h1 class="rounded-full border w-fit min-w-29 flex items-center justify-center ml-3 px-3 text-nowrap">most expensive</h1>         
+         <h1 class="rounded-full border w-fit min-w-29 flex items-center justify-center ml-3 px-3 text-nowrap">most expensive</h1>         
+         <h1 class="rounded-full border w-fit min-w-29 flex items-center justify-center ml-3 px-3 text-nowrap">most expensive</h1>         
+         <h1 class="rounded-full border w-fit min-w-29 flex items-center justify-center ml-3 px-3 text-nowrap">most expensive</h1>         
+         <h1 class="rounded-full border w-fit min-w-29 flex items-center justify-center ml-3 px-3 text-nowrap">most expensive</h1>         
+         <h1 class="rounded-full border w-fit min-w-29 flex items-center justify-center ml-3 px-3 text-nowrap">most expensive</h1>         
+         <h1 class="rounded-full border w-fit min-w-29 flex items-center justify-center ml-3 px-3 text-nowrap">most expensive</h1>         
+         <h1 class="rounded-full border w-fit min-w-29 flex items-center justify-center ml-3 px-3 text-nowrap">most expensive</h1>         
+         <h1 class="rounded-full border w-fit min-w-29 flex items-center justify-center ml-3 px-3 text-nowrap">most expensive</h1>         
+         <h1 class="rounded-full border w-fit min-w-29 flex items-center justify-center ml-3 px-3 text-nowrap">most expensive</h1>         
+         <h1 class="rounded-full border w-fit min-w-29 flex items-center justify-center ml-3 px-3 text-nowrap">most expensive</h1>         
+         <h1 class="rounded-full border w-fit min-w-29 flex items-center justify-center ml-3 px-3 text-nowrap">most expensive</h1>         
+         <h1 class="rounded-full border w-fit min-w-29 flex items-center justify-center ml-3 px-3 text-nowrap">most expensive</h1>         
          <h1 class="rounded-full border w-fit min-w-29 flex items-center justify-center ml-3 px-3 text-nowrap">most expensive</h1>         
        </div>
 

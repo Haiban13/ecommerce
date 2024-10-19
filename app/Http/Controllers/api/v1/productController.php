@@ -57,7 +57,7 @@ class productController extends Controller
                 'img5'=>$request->hasFile('img5') ? $request->file('img5')->store('products','public'):null,
             ]);
             $category=category::where('category',$request->category)->get();
-         dd($category);
+         
             return new productResource(products::create([
                 "name"=>$request->name,
                 "description"=>$request->description,
